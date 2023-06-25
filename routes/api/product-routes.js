@@ -2,27 +2,9 @@ const router = require('express').Router();
 const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // The `/api/products` endpoint
-
-// get all products
+// get all products  
 router.get('/', (req, res) => {
-  Product.findAll({
-   include: [
-     Category,
-     {
-       model: Tag,
-       through: ProductTag
-     }
-   ]
- })
-   .then((results) => res.json(results));
-});
-
-// get one product
-router.get('/:id', (req, res) => {
-   Product.findOne({
-      where: {
-        id: req.params.id
-      },
+    Product.findAll({
       include: [
         Category,
         {
@@ -31,7 +13,24 @@ router.get('/:id', (req, res) => {
         }
       ]
     })
-      .then((result) => res.json(result));
+    .then((results) => res.json(results));
+  });
+
+// get one product
+router.get('/:id', (req, res) => {
+  Product.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: [
+      Category,
+      {
+        model: Tag,
+        through: ProductTag
+      }
+    ]
+  })
+  .then((result) => res.json(result));
 });
 
 // create new product
@@ -114,11 +113,11 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
   Product.destroy({
-   where: {
-     id: req.params.id,
-   },
- })
- .then((binary) => res.status(200).json(binary))
-   });
+    where: {
+      id: req.params.id,
+    },
+  })
+  .then((binary) => res.status(200).json(binary))
+});
 
 module.exports = router;
