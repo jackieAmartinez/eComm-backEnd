@@ -1,4 +1,4 @@
 -- DROP DATABASE
-DROP DATABASE IF EXISTS eCommbackend_db;
+DROP DATABASE IF EXISTS ecommbackend_db;
 -- CREATE DATABASE
-CREATE DATABASE eCommbackend_db;
+CREATE DATABASE ecommbackend_db;
