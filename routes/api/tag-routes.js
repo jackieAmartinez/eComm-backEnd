@@ -39,20 +39,27 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// create a new tag
-router.post('/', async (req, res) => {
-  try {
-    const newTag = await Tag.create({
-      tag_name: req.body.tagName
-    });
-
-    res.status(200).json(newTag);
-    console.log('Tag created!');
-
-  } catch (err) {
-    res.status(500).json(err);
-  }
+router.post('/', (req, res) => {
+  // create a new tag
+  Tag.create(req.body)
+  .then((results) => res.status(200).json(results))
+  .catch((err) => res.status(404).json(err));
 });
+
+// create a new tag
+// router.post('/', async (req, res) => {
+//   try {
+//     const newTag = await Tag.create({
+//       tag_name: req.body.tagName
+//     });
+
+//     res.status(200).json(newTag);
+//     console.log('Tag created!');
+
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // update a tag's name by its `id` value
 router.put('/:id', async (req, res) => {
