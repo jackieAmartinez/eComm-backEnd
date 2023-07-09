@@ -3,6 +3,7 @@
 ## Description
 
 This is a MySQL database and application built for an e-commerce website. It was constructed utilizing MySQL2, Express, Sequelize and dotenv. This project focused on routes and making changes to a MySQL database using POST, PUT, and DELETE requests.
+[Demo Video](https://drive.google.com/file/d/1PSUM6Abd5cNluBCFeuCCVHUmg-eLlRsj/view)
 
 ## Table of Contents (Optional)
 
@@ -14,9 +15,8 @@ This is a MySQL database and application built for an e-commerce website. It was
 ## Installation
 
 Clone this repo
-Run 'npm i' 
+Run 'npm i'
 Run 'mysql -V' to verify MySQL. Install if MySQL does not exist
-
 
 ## Usage
 
@@ -30,9 +30,13 @@ Test routes in Insomnia
 
 [Express.js, Nodejs, sequelize, mysql, insomnia]
 
+![1688931181383](image/README/1688931181383.png)
+
+![1688931170196](image/README/1688931170196.png)
+
 ## Credits
 
-Lindsey Issac 
+Lindsey Issac
 Daniel Cohen
 Rachel Solov
 Tutors: Liz and Quinton
@@ -42,9 +46,3 @@ Tutors: Liz and Quinton
 The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
 
 ---
-
-
-
-
-
-[Demo Video](https://drive.google.com/file/d/1PSUM6Abd5cNluBCFeuCCVHUmg-eLlRsj/view)
